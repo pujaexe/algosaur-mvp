@@ -483,6 +483,20 @@
           "scheme": "blackbox",
           "componentType": "page",
           "path": "/[username]"
+        },
+        {
+          "id": "8BOfB1aBwSQ2",
+          "name": "PostDetails",
+          "type": "managed",
+          "projectId": "ew4qcccnQBEWaCZGLSHX1A",
+          "renderModuleFilePath": "plasmic/algosaur_mvp/PlasmicPostDetails.tsx",
+          "importSpec": {
+            "modulePath": "../pages/[trader]/[id].tsx"
+          },
+          "cssFilePath": "plasmic/algosaur_mvp/PlasmicPostDetails.module.css",
+          "scheme": "blackbox",
+          "componentType": "page",
+          "path": "/[trader]/[id]"
         }
       ],
       "icons": [
@@ -593,7 +607,8 @@
           "componentImportPath": "@plasmicpkgs/plasmic-basic-components"
         }
       ],
-      "customFunctions": []
+      "customFunctions": [],
+      "jsBundleThemes": []
     }
   ],
   "globalVariants": {

@@ -103,15 +103,15 @@ export type PlasmicHomepage__OverridesType = {
   loadingBoundary?: Flex__<typeof LoadingBoundary>;
   content?: Flex__<"section">;
   contentCard?: Flex__<typeof ContentCard>;
-  avatar?: Flex__<typeof PlasmicImg__>;
-  name?: Flex__<"a"> & Partial<LinkProps>;
-  coinTicker?: Flex__<"div">;
+  avatar2?: Flex__<typeof PlasmicImg__>;
+  name2?: Flex__<"a"> & Partial<LinkProps>;
+  coinTicker2?: Flex__<"div">;
   h5?: Flex__<"h5">;
-  signal?: Flex__<"div">;
-  chart?: Flex__<"div">;
-  love?: Flex__<"div">;
-  comment?: Flex__<"div">;
-  send?: Flex__<"div">;
+  signal2?: Flex__<"div">;
+  chart2?: Flex__<"div">;
+  love2?: Flex__<"div">;
+  comment2?: Flex__<"div">;
+  send2?: Flex__<"div">;
 };
 
 export interface DefaultHomepageProps {}
@@ -320,808 +320,807 @@ function PlasmicHomepage__RenderFunc(props: {
                     const currentItem = __plasmic_item_0;
                     const currentIndex = __plasmic_idx_0;
                     return (
-                      <ContentCard
-                        data-plasmic-name={"contentCard"}
-                        data-plasmic-override={overrides.contentCard}
-                        cardImage2={
-                          <PlasmicImg__
-                            alt={""}
-                            className={classNames(sty.img__yYwRy)}
-                            displayHeight={"auto"}
-                            displayMaxHeight={"none"}
-                            displayMaxWidth={"100%"}
-                            displayMinHeight={"0"}
-                            displayMinWidth={"0"}
-                            displayWidth={"100%"}
-                            loading={"lazy"}
-                            src={(() => {
-                              try {
-                                return currentItem.image;
-                              } catch (e) {
-                                if (
-                                  e instanceof TypeError ||
-                                  e?.plasmicType === "PlasmicUndefinedDataError"
-                                ) {
-                                  return undefined;
-                                }
-                                throw e;
-                              }
-                            })()}
-                          />
-                        }
-                        cardTitle2={
-                          <React.Fragment>
-                            <Stack__
-                              as={"div"}
-                              hasGap={true}
-                              className={classNames(
-                                projectcss.all,
-                                sty.freeBox__osCuf
-                              )}
-                            >
-                              <PlasmicImg__
-                                data-plasmic-name={"avatar"}
-                                data-plasmic-override={overrides.avatar}
-                                alt={""}
-                                className={classNames(sty.avatar)}
-                                displayHeight={"42px"}
-                                displayMaxHeight={"none"}
-                                displayMaxWidth={"100%"}
-                                displayMinHeight={"0"}
-                                displayMinWidth={"0"}
-                                displayWidth={"42px"}
-                                loading={"lazy"}
-                                src={(() => {
-                                  try {
-                                    return $queries.queryTrader.data.find(
-                                      trader =>
-                                        trader.username === currentItem.username
-                                    ).avatar;
-                                  } catch (e) {
-                                    if (
-                                      e instanceof TypeError ||
-                                      e?.plasmicType ===
-                                        "PlasmicUndefinedDataError"
-                                    ) {
-                                      return undefined;
-                                    }
-                                    throw e;
-                                  }
-                                })()}
-                              />
-
-                              <PlasmicLink__
-                                data-plasmic-name={"name"}
-                                data-plasmic-override={overrides.name}
-                                className={classNames(
-                                  projectcss.all,
-                                  projectcss.a,
-                                  sty.name
-                                )}
-                                component={Link}
-                                href={`/${(() => {
-                                  try {
-                                    return currentItem.username;
-                                  } catch (e) {
-                                    if (
-                                      e instanceof TypeError ||
-                                      e?.plasmicType ===
-                                        "PlasmicUndefinedDataError"
-                                    ) {
-                                      return undefined;
-                                    }
-                                    throw e;
-                                  }
-                                })()}`}
-                                platform={"nextjs"}
-                              >
-                                <h6
-                                  className={classNames(
-                                    projectcss.all,
-                                    projectcss.h6,
-                                    projectcss.__wab_text,
-                                    sty.h6__olIWe
-                                  )}
-                                >
-                                  <React.Fragment>
-                                    {(() => {
-                                      try {
-                                        return currentItem.username;
-                                      } catch (e) {
-                                        if (
-                                          e instanceof TypeError ||
-                                          e?.plasmicType ===
-                                            "PlasmicUndefinedDataError"
-                                        ) {
-                                          return "Trader Name";
-                                        }
-                                        throw e;
-                                      }
-                                    })()}
-                                  </React.Fragment>
-                                </h6>
-                                <div
-                                  className={classNames(
-                                    projectcss.all,
-                                    projectcss.__wab_text,
-                                    sty.text__yiCls
-                                  )}
-                                >
-                                  <React.Fragment>
-                                    {(() => {
-                                      try {
-                                        return (() => {
-                                          const currentDate = new Date();
-                                          const createdAt = new Date(
-                                            currentItem.created_at
-                                          );
-                                          const timeDiffMs =
-                                            currentDate.getTime() -
-                                            createdAt.getTime();
-                                          const minutesDiff = Math.floor(
-                                            timeDiffMs / (1000 * 60)
-                                          );
-                                          const hoursDiff = Math.floor(
-                                            timeDiffMs / (1000 * 60 * 60)
-                                          );
-                                          const daysDiff = Math.floor(
-                                            timeDiffMs / (1000 * 60 * 60 * 24)
-                                          );
-
-                                          if (minutesDiff < 60) {
-                                            return `${minutesDiff} minutes ago`;
-                                          } else if (hoursDiff < 24) {
-                                            return `${hoursDiff} hours ago`;
-                                          } else {
-                                            return `${daysDiff} days ago`;
-                                          }
-                                        })();
-                                      } catch (e) {
-                                        if (
-                                          e instanceof TypeError ||
-                                          e?.plasmicType ===
-                                            "PlasmicUndefinedDataError"
-                                        ) {
-                                          return "Trader Name";
-                                        }
-                                        throw e;
-                                      }
-                                    })()}
-                                  </React.Fragment>
-                                </div>
-                              </PlasmicLink__>
-                            </Stack__>
-                            <button
-                              className={classNames(
-                                projectcss.all,
-                                projectcss.button,
-                                projectcss.__wab_text,
-                                sty.button__xwK06
-                              )}
-                            >
-                              {"Follow"}
-                            </button>
-                            <PlasmicLink__
-                              className={classNames(
-                                projectcss.all,
-                                projectcss.a,
-                                sty.link__ot6Lf
-                              )}
-                              component={Link}
-                              platform={"nextjs"}
-                            >
-                              <MoreActionsvgIcon
-                                className={classNames(
-                                  projectcss.all,
-                                  sty.svg__mpVK
-                                )}
-                                role={"img"}
-                              />
-                            </PlasmicLink__>
-                          </React.Fragment>
-                        }
-                        cardToolbar2={
-                          <React.Fragment>
-                            <Stack__
-                              as={"div"}
-                              data-plasmic-name={"chart"}
-                              data-plasmic-override={overrides.chart}
-                              hasGap={true}
-                              className={classNames(projectcss.all, sty.chart)}
-                            >
-                              <Chart2SvgIcon
-                                className={classNames(
-                                  projectcss.all,
-                                  sty.svg__uVzMo
-                                )}
-                                role={"img"}
-                              />
-
-                              <div
-                                className={classNames(
-                                  projectcss.all,
-                                  projectcss.__wab_text,
-                                  sty.text__vJyHx
-                                )}
-                              >
-                                <React.Fragment>
-                                  {(() => {
-                                    try {
-                                      return currentItem.interactionAgregate
-                                        .view;
-                                    } catch (e) {
-                                      if (
-                                        e instanceof TypeError ||
-                                        e?.plasmicType ===
-                                          "PlasmicUndefinedDataError"
-                                      ) {
-                                        return "12.3K";
-                                      }
-                                      throw e;
-                                    }
-                                  })()}
-                                </React.Fragment>
-                              </div>
-                            </Stack__>
-                            <Stack__
-                              as={"div"}
-                              data-plasmic-name={"love"}
-                              data-plasmic-override={overrides.love}
-                              hasGap={true}
-                              className={classNames(projectcss.all, sty.love)}
-                            >
-                              <HeartsvgIcon
-                                className={classNames(
-                                  projectcss.all,
-                                  sty.svg__gwAH
-                                )}
-                                role={"img"}
-                              />
-
-                              <div
-                                className={classNames(
-                                  projectcss.all,
-                                  projectcss.__wab_text,
-                                  sty.text__cCw3Y
-                                )}
-                              >
-                                <React.Fragment>
-                                  {(() => {
-                                    try {
-                                      return currentItem.interactionAgregate
-                                        .likes;
-                                    } catch (e) {
-                                      if (
-                                        e instanceof TypeError ||
-                                        e?.plasmicType ===
-                                          "PlasmicUndefinedDataError"
-                                      ) {
-                                        return "12.3K";
-                                      }
-                                      throw e;
-                                    }
-                                  })()}
-                                </React.Fragment>
-                              </div>
-                            </Stack__>
-                            <Stack__
-                              as={"div"}
-                              data-plasmic-name={"comment"}
-                              data-plasmic-override={overrides.comment}
-                              hasGap={true}
-                              className={classNames(
-                                projectcss.all,
-                                sty.comment
-                              )}
-                            >
-                              <MessageSearchsvgIcon
-                                className={classNames(
-                                  projectcss.all,
-                                  sty.svg__zYArt
-                                )}
-                                role={"img"}
-                              />
-
-                              <div
-                                className={classNames(
-                                  projectcss.all,
-                                  projectcss.__wab_text,
-                                  sty.text__nhTMk
-                                )}
-                              >
-                                <React.Fragment>
-                                  {(() => {
-                                    try {
-                                      return currentItem.interactionAgregate
-                                        .share;
-                                    } catch (e) {
-                                      if (
-                                        e instanceof TypeError ||
-                                        e?.plasmicType ===
-                                          "PlasmicUndefinedDataError"
-                                      ) {
-                                        return "12.3K";
-                                      }
-                                      throw e;
-                                    }
-                                  })()}
-                                </React.Fragment>
-                              </div>
-                            </Stack__>
-                            <Stack__
-                              as={"div"}
-                              data-plasmic-name={"send"}
-                              data-plasmic-override={overrides.send}
-                              hasGap={true}
-                              className={classNames(projectcss.all, sty.send)}
-                            >
-                              <SendsvgIcon
-                                className={classNames(
-                                  projectcss.all,
-                                  sty.svg__qTlo
-                                )}
-                                role={"img"}
-                              />
-
-                              <div
-                                className={classNames(
-                                  projectcss.all,
-                                  projectcss.__wab_text,
-                                  sty.text__loh63
-                                )}
-                              >
-                                <React.Fragment>
-                                  {(() => {
-                                    try {
-                                      return currentItem.interactionAgregate
-                                        .comments;
-                                    } catch (e) {
-                                      if (
-                                        e instanceof TypeError ||
-                                        e?.plasmicType ===
-                                          "PlasmicUndefinedDataError"
-                                      ) {
-                                        return "12.3K";
-                                      }
-                                      throw e;
-                                    }
-                                  })()}
-                                </React.Fragment>
-                              </div>
-                            </Stack__>
-                          </React.Fragment>
-                        }
+                      <PlasmicLink__
                         className={classNames(
-                          "__wab_instance",
-                          sty.contentCard
+                          projectcss.all,
+                          projectcss.a,
+                          sty.link___9Hpfu
                         )}
-                        imageOn={(() => {
+                        component={Link}
+                        href={`/${(() => {
                           try {
-                            return currentItem.image != null;
+                            return currentItem.username;
                           } catch (e) {
                             if (
                               e instanceof TypeError ||
                               e?.plasmicType === "PlasmicUndefinedDataError"
                             ) {
-                              return "imageOn";
+                              return undefined;
                             }
                             throw e;
                           }
-                        })()}
+                        })()}/${(() => {
+                          try {
+                            return currentItem.id;
+                          } catch (e) {
+                            if (
+                              e instanceof TypeError ||
+                              e?.plasmicType === "PlasmicUndefinedDataError"
+                            ) {
+                              return undefined;
+                            }
+                            throw e;
+                          }
+                        })()}`}
                         key={currentIndex}
-                        signalContainer2={
-                          <React.Fragment>
-                            <Stack__
-                              as={"div"}
-                              data-plasmic-name={"coinTicker"}
-                              data-plasmic-override={overrides.coinTicker}
-                              hasGap={true}
-                              className={classNames(
-                                projectcss.all,
-                                sty.coinTicker
-                              )}
-                            >
-                              <PlasmicImg__
-                                alt={""}
-                                className={classNames(sty.img__fhYRc)}
-                                displayHeight={"32px"}
-                                displayMaxHeight={"none"}
-                                displayMaxWidth={"100%"}
-                                displayMinHeight={"0"}
-                                displayMinWidth={"0"}
-                                displayWidth={"32px"}
-                                loading={"lazy"}
-                                src={(() => {
-                                  try {
-                                    return $queries.queryToken.data.find(
-                                      token =>
-                                        token.symbol ===
-                                        currentItem.signal.Symbol
-                                    ).logo;
-                                  } catch (e) {
-                                    if (
-                                      e instanceof TypeError ||
-                                      e?.plasmicType ===
-                                        "PlasmicUndefinedDataError"
-                                    ) {
-                                      return {
-                                        src: "/plasmic/algosaur_mvp/images/image.png",
-                                        fullWidth: 64,
-                                        fullHeight: 64,
-                                        aspectRatio: undefined
-                                      };
-                                    }
-                                    throw e;
-                                  }
-                                })()}
-                              />
-
-                              <div
-                                className={classNames(
-                                  projectcss.all,
-                                  sty.freeBox__f2LjL
-                                )}
-                              >
-                                <h5
-                                  data-plasmic-name={"h5"}
-                                  data-plasmic-override={overrides.h5}
-                                  className={classNames(
-                                    projectcss.all,
-                                    projectcss.h5,
-                                    projectcss.__wab_text,
-                                    sty.h5
-                                  )}
-                                >
-                                  <React.Fragment>
-                                    {(() => {
-                                      try {
-                                        return currentItem.signal.Symbol;
-                                      } catch (e) {
-                                        if (
-                                          e instanceof TypeError ||
-                                          e?.plasmicType ===
-                                            "PlasmicUndefinedDataError"
-                                        ) {
-                                          return "BTC";
-                                        }
-                                        throw e;
-                                      }
-                                    })()}
-                                  </React.Fragment>
-                                </h5>
-                                <div
-                                  className={classNames(
-                                    projectcss.all,
-                                    projectcss.__wab_text,
-                                    sty.text__iS43J
-                                  )}
-                                >
-                                  <React.Fragment>
-                                    {(() => {
-                                      try {
-                                        return $queries.queryToken.data.find(
-                                          token =>
-                                            token.symbol ===
-                                            currentItem.signal.Symbol
-                                        ).name;
-                                      } catch (e) {
-                                        if (
-                                          e instanceof TypeError ||
-                                          e?.plasmicType ===
-                                            "PlasmicUndefinedDataError"
-                                        ) {
-                                          return "Bitcoin/usdt";
-                                        }
-                                        throw e;
-                                      }
-                                    })()}
-                                  </React.Fragment>
-                                </div>
-                              </div>
-                            </Stack__>
-                            <div
-                              data-plasmic-name={"signal"}
-                              data-plasmic-override={overrides.signal}
-                              className={classNames(projectcss.all, sty.signal)}
-                            >
-                              <div
-                                className={classNames(
-                                  projectcss.all,
-                                  sty.freeBox__ihUyw
-                                )}
-                              >
-                                <div
-                                  className={classNames(
-                                    projectcss.all,
-                                    projectcss.__wab_text,
-                                    sty.text__rgUsz
-                                  )}
-                                >
-                                  {"Current Price"}
-                                </div>
-                                <h6
-                                  className={classNames(
-                                    projectcss.all,
-                                    projectcss.h6,
-                                    projectcss.__wab_text,
-                                    sty.h6__ekjY
-                                  )}
-                                >
-                                  <React.Fragment>
-                                    {(() => {
-                                      try {
-                                        return currentItem.signal.currentPrice;
-                                      } catch (e) {
-                                        if (
-                                          e instanceof TypeError ||
-                                          e?.plasmicType ===
-                                            "PlasmicUndefinedDataError"
-                                        ) {
-                                          return "Current Price";
-                                        }
-                                        throw e;
-                                      }
-                                    })()}
-                                  </React.Fragment>
-                                </h6>
-                              </div>
-                              <div
-                                className={classNames(
-                                  projectcss.all,
-                                  sty.freeBox__xamJn
-                                )}
-                              >
-                                <div
-                                  className={classNames(
-                                    projectcss.all,
-                                    projectcss.__wab_text,
-                                    sty.text__diH
-                                  )}
-                                >
-                                  {"Target Price"}
-                                </div>
-                                <h6
-                                  className={classNames(
-                                    projectcss.all,
-                                    projectcss.h6,
-                                    projectcss.__wab_text,
-                                    sty.h6__k4Ypf
-                                  )}
-                                >
-                                  <React.Fragment>
-                                    {(() => {
-                                      try {
-                                        return currentItem.signal.targetPrice;
-                                      } catch (e) {
-                                        if (
-                                          e instanceof TypeError ||
-                                          e?.plasmicType ===
-                                            "PlasmicUndefinedDataError"
-                                        ) {
-                                          return "Current Price";
-                                        }
-                                        throw e;
-                                      }
-                                    })()}
-                                  </React.Fragment>
-                                </h6>
-                              </div>
-                              <div
-                                className={classNames(
-                                  projectcss.all,
-                                  sty.freeBox___5SDy7
-                                )}
-                              >
-                                <div
-                                  className={classNames(
-                                    projectcss.all,
-                                    projectcss.__wab_text,
-                                    sty.text__bIPg
-                                  )}
-                                >
-                                  {"Stop Loss"}
-                                </div>
-                                <h6
-                                  className={classNames(
-                                    projectcss.all,
-                                    projectcss.h6,
-                                    projectcss.__wab_text,
-                                    sty.h6__ix38I
-                                  )}
-                                >
-                                  <React.Fragment>
-                                    {(() => {
-                                      try {
-                                        return currentItem.signal.stopLoss;
-                                      } catch (e) {
-                                        if (
-                                          e instanceof TypeError ||
-                                          e?.plasmicType ===
-                                            "PlasmicUndefinedDataError"
-                                        ) {
-                                          return "Current Price";
-                                        }
-                                        throw e;
-                                      }
-                                    })()}
-                                  </React.Fragment>
-                                </h6>
-                              </div>
-                              <div
-                                className={classNames(
-                                  projectcss.all,
-                                  sty.freeBox__o30PW
-                                )}
-                              >
-                                <div
-                                  className={classNames(
-                                    projectcss.all,
-                                    projectcss.__wab_text,
-                                    sty.text__bb9E2
-                                  )}
-                                >
-                                  {"TP 1"}
-                                </div>
-                                <h6
-                                  className={classNames(
-                                    projectcss.all,
-                                    projectcss.h6,
-                                    projectcss.__wab_text,
-                                    sty.h6__j0MjC
-                                  )}
-                                >
-                                  <React.Fragment>
-                                    {(() => {
-                                      try {
-                                        return currentItem.signal.TP1;
-                                      } catch (e) {
-                                        if (
-                                          e instanceof TypeError ||
-                                          e?.plasmicType ===
-                                            "PlasmicUndefinedDataError"
-                                        ) {
-                                          return "Current Price";
-                                        }
-                                        throw e;
-                                      }
-                                    })()}
-                                  </React.Fragment>
-                                </h6>
-                              </div>
-                              <div
-                                className={classNames(
-                                  projectcss.all,
-                                  sty.freeBox___1JizF
-                                )}
-                              >
-                                <div
-                                  className={classNames(
-                                    projectcss.all,
-                                    projectcss.__wab_text,
-                                    sty.text__lwXq7
-                                  )}
-                                >
-                                  {"TP 2"}
-                                </div>
-                                <h6
-                                  className={classNames(
-                                    projectcss.all,
-                                    projectcss.h6,
-                                    projectcss.__wab_text,
-                                    sty.h6__fjZ72
-                                  )}
-                                >
-                                  <React.Fragment>
-                                    {(() => {
-                                      try {
-                                        return currentItem.signal.TP2;
-                                      } catch (e) {
-                                        if (
-                                          e instanceof TypeError ||
-                                          e?.plasmicType ===
-                                            "PlasmicUndefinedDataError"
-                                        ) {
-                                          return "Current Price";
-                                        }
-                                        throw e;
-                                      }
-                                    })()}
-                                  </React.Fragment>
-                                </h6>
-                              </div>
-                              <div
-                                className={classNames(
-                                  projectcss.all,
-                                  sty.freeBox__rgSIu
-                                )}
-                              >
-                                <div
-                                  className={classNames(
-                                    projectcss.all,
-                                    projectcss.__wab_text,
-                                    sty.text__xhUq
-                                  )}
-                                >
-                                  {"TP 3"}
-                                </div>
-                                <h6
-                                  className={classNames(
-                                    projectcss.all,
-                                    projectcss.h6,
-                                    projectcss.__wab_text,
-                                    sty.h6__h9Ys
-                                  )}
-                                >
-                                  <React.Fragment>
-                                    {(() => {
-                                      try {
-                                        return currentItem.signal.TP3;
-                                      } catch (e) {
-                                        if (
-                                          e instanceof TypeError ||
-                                          e?.plasmicType ===
-                                            "PlasmicUndefinedDataError"
-                                        ) {
-                                          return "Current Price";
-                                        }
-                                        throw e;
-                                      }
-                                    })()}
-                                  </React.Fragment>
-                                </h6>
-                              </div>
-                            </div>
-                            <Button
-                              className={classNames(
-                                "__wab_instance",
-                                sty.button__ePvS6
-                              )}
-                              color={"green"}
-                            >
-                              {"Execute Trade"}
-                            </Button>
-                          </React.Fragment>
-                        }
-                        signalOn={(() => {
-                          try {
-                            return currentItem.signal != null;
-                          } catch (e) {
-                            if (
-                              e instanceof TypeError ||
-                              e?.plasmicType === "PlasmicUndefinedDataError"
-                            ) {
-                              return "signalOn";
-                            }
-                            throw e;
-                          }
-                        })()}
-                        textContent2={
-                          <div
-                            className={classNames(
-                              projectcss.all,
-                              projectcss.__wab_text,
-                              sty.text__d4GG
-                            )}
-                          >
-                            <React.Fragment>
-                              {(() => {
+                        platform={"nextjs"}
+                      >
+                        <ContentCard
+                          data-plasmic-name={"contentCard"}
+                          data-plasmic-override={overrides.contentCard}
+                          cardImage2={
+                            <PlasmicImg__
+                              alt={""}
+                              className={classNames(sty.img__efPpj)}
+                              displayHeight={"auto"}
+                              displayMaxHeight={"none"}
+                              displayMaxWidth={"100%"}
+                              displayMinHeight={"0"}
+                              displayMinWidth={"0"}
+                              displayWidth={"100%"}
+                              loading={"lazy"}
+                              src={(() => {
                                 try {
-                                  return currentItem.caption;
+                                  return currentItem.image;
                                 } catch (e) {
                                   if (
                                     e instanceof TypeError ||
                                     e?.plasmicType ===
                                       "PlasmicUndefinedDataError"
                                   ) {
-                                    return "Wellcome to algosaur, we are the first social trade in indonesia for crypto market trading";
+                                    return undefined;
                                   }
                                   throw e;
                                 }
                               })()}
+                            />
+                          }
+                          cardTitle2={
+                            <React.Fragment>
+                              <Stack__
+                                as={"div"}
+                                hasGap={true}
+                                className={classNames(
+                                  projectcss.all,
+                                  sty.freeBox__vHv7D
+                                )}
+                              >
+                                <PlasmicImg__
+                                  data-plasmic-name={"avatar2"}
+                                  data-plasmic-override={overrides.avatar2}
+                                  alt={""}
+                                  className={classNames(sty.avatar2)}
+                                  displayHeight={"42px"}
+                                  displayMaxHeight={"none"}
+                                  displayMaxWidth={"100%"}
+                                  displayMinHeight={"0"}
+                                  displayMinWidth={"0"}
+                                  displayWidth={"42px"}
+                                  loading={"lazy"}
+                                  src={(() => {
+                                    try {
+                                      return $queries.queryTrader.data.find(
+                                        trader =>
+                                          trader.username ===
+                                          currentItem.username
+                                      ).avatar;
+                                    } catch (e) {
+                                      if (
+                                        e instanceof TypeError ||
+                                        e?.plasmicType ===
+                                          "PlasmicUndefinedDataError"
+                                      ) {
+                                        return undefined;
+                                      }
+                                      throw e;
+                                    }
+                                  })()}
+                                />
+
+                                <PlasmicLink__
+                                  data-plasmic-name={"name2"}
+                                  data-plasmic-override={overrides.name2}
+                                  className={classNames(
+                                    projectcss.all,
+                                    projectcss.a,
+                                    sty.name2
+                                  )}
+                                  component={Link}
+                                  href={`/${(() => {
+                                    try {
+                                      return currentItem.username;
+                                    } catch (e) {
+                                      if (
+                                        e instanceof TypeError ||
+                                        e?.plasmicType ===
+                                          "PlasmicUndefinedDataError"
+                                      ) {
+                                        return undefined;
+                                      }
+                                      throw e;
+                                    }
+                                  })()}`}
+                                  platform={"nextjs"}
+                                >
+                                  <h6
+                                    className={classNames(
+                                      projectcss.all,
+                                      projectcss.h6,
+                                      projectcss.__wab_text,
+                                      sty.h6___4EDl
+                                    )}
+                                  >
+                                    <React.Fragment>
+                                      {(() => {
+                                        try {
+                                          return currentItem.username;
+                                        } catch (e) {
+                                          if (
+                                            e instanceof TypeError ||
+                                            e?.plasmicType ===
+                                              "PlasmicUndefinedDataError"
+                                          ) {
+                                            return "Trader Name";
+                                          }
+                                          throw e;
+                                        }
+                                      })()}
+                                    </React.Fragment>
+                                  </h6>
+                                  <div
+                                    className={classNames(
+                                      projectcss.all,
+                                      projectcss.__wab_text,
+                                      sty.text__dHdfl
+                                    )}
+                                  >
+                                    <React.Fragment>
+                                      {(() => {
+                                        try {
+                                          return (() => {
+                                            const currentDate = new Date();
+                                            const createdAt = new Date(
+                                              currentItem.created_at
+                                            );
+                                            const timeDiffMs =
+                                              currentDate.getTime() -
+                                              createdAt.getTime();
+                                            const minutesDiff = Math.floor(
+                                              timeDiffMs / (1000 * 60)
+                                            );
+                                            const hoursDiff = Math.floor(
+                                              timeDiffMs / (1000 * 60 * 60)
+                                            );
+                                            const daysDiff = Math.floor(
+                                              timeDiffMs / (1000 * 60 * 60 * 24)
+                                            );
+
+                                            if (minutesDiff < 60) {
+                                              return `${minutesDiff} minutes ago`;
+                                            } else if (hoursDiff < 24) {
+                                              return `${hoursDiff} hours ago`;
+                                            } else {
+                                              return `${daysDiff} days ago`;
+                                            }
+                                          })();
+                                        } catch (e) {
+                                          if (
+                                            e instanceof TypeError ||
+                                            e?.plasmicType ===
+                                              "PlasmicUndefinedDataError"
+                                          ) {
+                                            return "Trader Name";
+                                          }
+                                          throw e;
+                                        }
+                                      })()}
+                                    </React.Fragment>
+                                  </div>
+                                </PlasmicLink__>
+                              </Stack__>
+                              <button
+                                className={classNames(
+                                  projectcss.all,
+                                  projectcss.button,
+                                  projectcss.__wab_text,
+                                  sty.button__blrk2
+                                )}
+                              >
+                                {"Follow"}
+                              </button>
+                              <PlasmicLink__
+                                className={classNames(
+                                  projectcss.all,
+                                  projectcss.a,
+                                  sty.link__h8Ffh
+                                )}
+                                component={Link}
+                                platform={"nextjs"}
+                              >
+                                <MoreActionsvgIcon
+                                  className={classNames(
+                                    projectcss.all,
+                                    sty.svg___8EqSb
+                                  )}
+                                  role={"img"}
+                                />
+                              </PlasmicLink__>
                             </React.Fragment>
-                          </div>
-                        }
-                      />
+                          }
+                          cardToolbar2={
+                            <React.Fragment>
+                              <Stack__
+                                as={"div"}
+                                data-plasmic-name={"chart2"}
+                                data-plasmic-override={overrides.chart2}
+                                hasGap={true}
+                                className={classNames(
+                                  projectcss.all,
+                                  sty.chart2
+                                )}
+                              >
+                                <Chart2SvgIcon
+                                  className={classNames(
+                                    projectcss.all,
+                                    sty.svg__gmKE
+                                  )}
+                                  role={"img"}
+                                />
+
+                                <div
+                                  className={classNames(
+                                    projectcss.all,
+                                    projectcss.__wab_text,
+                                    sty.text__nkIuY
+                                  )}
+                                >
+                                  <React.Fragment>
+                                    {(() => {
+                                      try {
+                                        return currentItem.interactionAgregate
+                                          .view;
+                                      } catch (e) {
+                                        if (
+                                          e instanceof TypeError ||
+                                          e?.plasmicType ===
+                                            "PlasmicUndefinedDataError"
+                                        ) {
+                                          return "12.3K";
+                                        }
+                                        throw e;
+                                      }
+                                    })()}
+                                  </React.Fragment>
+                                </div>
+                              </Stack__>
+                              <Stack__
+                                as={"div"}
+                                data-plasmic-name={"love2"}
+                                data-plasmic-override={overrides.love2}
+                                hasGap={true}
+                                className={classNames(
+                                  projectcss.all,
+                                  sty.love2
+                                )}
+                              >
+                                <HeartsvgIcon
+                                  className={classNames(
+                                    projectcss.all,
+                                    sty.svg__eBDj
+                                  )}
+                                  role={"img"}
+                                />
+
+                                <div
+                                  className={classNames(
+                                    projectcss.all,
+                                    projectcss.__wab_text,
+                                    sty.text___6VP5X
+                                  )}
+                                >
+                                  <React.Fragment>
+                                    {(() => {
+                                      try {
+                                        return currentItem.interactionAgregate
+                                          .likes;
+                                      } catch (e) {
+                                        if (
+                                          e instanceof TypeError ||
+                                          e?.plasmicType ===
+                                            "PlasmicUndefinedDataError"
+                                        ) {
+                                          return "12.3K";
+                                        }
+                                        throw e;
+                                      }
+                                    })()}
+                                  </React.Fragment>
+                                </div>
+                              </Stack__>
+                              <Stack__
+                                as={"div"}
+                                data-plasmic-name={"comment2"}
+                                data-plasmic-override={overrides.comment2}
+                                hasGap={true}
+                                className={classNames(
+                                  projectcss.all,
+                                  sty.comment2
+                                )}
+                              >
+                                <MessageSearchsvgIcon
+                                  className={classNames(
+                                    projectcss.all,
+                                    sty.svg__zRzj1
+                                  )}
+                                  role={"img"}
+                                />
+
+                                <div
+                                  className={classNames(
+                                    projectcss.all,
+                                    projectcss.__wab_text,
+                                    sty.text__auSm6
+                                  )}
+                                >
+                                  <React.Fragment>
+                                    {(() => {
+                                      try {
+                                        return currentItem.interactionAgregate
+                                          .comments;
+                                      } catch (e) {
+                                        if (
+                                          e instanceof TypeError ||
+                                          e?.plasmicType ===
+                                            "PlasmicUndefinedDataError"
+                                        ) {
+                                          return "12.3K";
+                                        }
+                                        throw e;
+                                      }
+                                    })()}
+                                  </React.Fragment>
+                                </div>
+                              </Stack__>
+                              <Stack__
+                                as={"div"}
+                                data-plasmic-name={"send2"}
+                                data-plasmic-override={overrides.send2}
+                                hasGap={true}
+                                className={classNames(
+                                  projectcss.all,
+                                  sty.send2
+                                )}
+                              >
+                                <SendsvgIcon
+                                  className={classNames(
+                                    projectcss.all,
+                                    sty.svg__h6Urc
+                                  )}
+                                  role={"img"}
+                                />
+
+                                <div
+                                  className={classNames(
+                                    projectcss.all,
+                                    projectcss.__wab_text,
+                                    sty.text__y2FDe
+                                  )}
+                                >
+                                  <React.Fragment>
+                                    {(() => {
+                                      try {
+                                        return currentItem.interactionAgregate
+                                          .share;
+                                      } catch (e) {
+                                        if (
+                                          e instanceof TypeError ||
+                                          e?.plasmicType ===
+                                            "PlasmicUndefinedDataError"
+                                        ) {
+                                          return "12.3K";
+                                        }
+                                        throw e;
+                                      }
+                                    })()}
+                                  </React.Fragment>
+                                </div>
+                              </Stack__>
+                            </React.Fragment>
+                          }
+                          className={classNames(
+                            "__wab_instance",
+                            sty.contentCard
+                          )}
+                          imageOn={(() => {
+                            try {
+                              return currentItem.image != null;
+                            } catch (e) {
+                              if (
+                                e instanceof TypeError ||
+                                e?.plasmicType === "PlasmicUndefinedDataError"
+                              ) {
+                                return [];
+                              }
+                              throw e;
+                            }
+                          })()}
+                          signalContainer2={
+                            <React.Fragment>
+                              <Stack__
+                                as={"div"}
+                                data-plasmic-name={"coinTicker2"}
+                                data-plasmic-override={overrides.coinTicker2}
+                                hasGap={true}
+                                className={classNames(
+                                  projectcss.all,
+                                  sty.coinTicker2
+                                )}
+                              >
+                                <PlasmicImg__
+                                  alt={""}
+                                  className={classNames(sty.img__l3GFu)}
+                                  displayHeight={"32px"}
+                                  displayMaxHeight={"none"}
+                                  displayMaxWidth={"100%"}
+                                  displayMinHeight={"0"}
+                                  displayMinWidth={"0"}
+                                  displayWidth={"32px"}
+                                  loading={"lazy"}
+                                  src={{
+                                    src: "/plasmic/algosaur_mvp/images/image.png",
+                                    fullWidth: 64,
+                                    fullHeight: 64,
+                                    aspectRatio: undefined
+                                  }}
+                                />
+
+                                <div
+                                  className={classNames(
+                                    projectcss.all,
+                                    sty.freeBox__p4D7O
+                                  )}
+                                >
+                                  <h5
+                                    data-plasmic-name={"h5"}
+                                    data-plasmic-override={overrides.h5}
+                                    className={classNames(
+                                      projectcss.all,
+                                      projectcss.h5,
+                                      projectcss.__wab_text,
+                                      sty.h5
+                                    )}
+                                  >
+                                    {"BTC"}
+                                  </h5>
+                                  <div
+                                    className={classNames(
+                                      projectcss.all,
+                                      projectcss.__wab_text,
+                                      sty.text__dqm7F
+                                    )}
+                                  >
+                                    {"Bitcoin/usdt"}
+                                  </div>
+                                </div>
+                              </Stack__>
+                              <div
+                                data-plasmic-name={"signal2"}
+                                data-plasmic-override={overrides.signal2}
+                                className={classNames(
+                                  projectcss.all,
+                                  sty.signal2
+                                )}
+                              >
+                                <div
+                                  className={classNames(
+                                    projectcss.all,
+                                    sty.freeBox__duASx
+                                  )}
+                                >
+                                  <div
+                                    className={classNames(
+                                      projectcss.all,
+                                      projectcss.__wab_text,
+                                      sty.text__sS8Ar
+                                    )}
+                                  >
+                                    {"Current Price"}
+                                  </div>
+                                  <h6
+                                    className={classNames(
+                                      projectcss.all,
+                                      projectcss.h6,
+                                      projectcss.__wab_text,
+                                      sty.h6__f2Iab
+                                    )}
+                                  >
+                                    <React.Fragment>
+                                      {(() => {
+                                        try {
+                                          return currentItem.signal
+                                            .currentPrice;
+                                        } catch (e) {
+                                          if (
+                                            e instanceof TypeError ||
+                                            e?.plasmicType ===
+                                              "PlasmicUndefinedDataError"
+                                          ) {
+                                            return "Current Price";
+                                          }
+                                          throw e;
+                                        }
+                                      })()}
+                                    </React.Fragment>
+                                  </h6>
+                                </div>
+                                <div
+                                  className={classNames(
+                                    projectcss.all,
+                                    sty.freeBox__fBpA
+                                  )}
+                                >
+                                  <div
+                                    className={classNames(
+                                      projectcss.all,
+                                      projectcss.__wab_text,
+                                      sty.text__rcNz1
+                                    )}
+                                  >
+                                    {"Target Price"}
+                                  </div>
+                                  <h6
+                                    className={classNames(
+                                      projectcss.all,
+                                      projectcss.h6,
+                                      projectcss.__wab_text,
+                                      sty.h6__q04K0
+                                    )}
+                                  >
+                                    <React.Fragment>
+                                      {(() => {
+                                        try {
+                                          return currentItem.signal.targetPrice;
+                                        } catch (e) {
+                                          if (
+                                            e instanceof TypeError ||
+                                            e?.plasmicType ===
+                                              "PlasmicUndefinedDataError"
+                                          ) {
+                                            return "Current Price";
+                                          }
+                                          throw e;
+                                        }
+                                      })()}
+                                    </React.Fragment>
+                                  </h6>
+                                </div>
+                                <div
+                                  className={classNames(
+                                    projectcss.all,
+                                    sty.freeBox__rGvwP
+                                  )}
+                                >
+                                  <div
+                                    className={classNames(
+                                      projectcss.all,
+                                      projectcss.__wab_text,
+                                      sty.text___3U2Mp
+                                    )}
+                                  >
+                                    {"Stop Loss"}
+                                  </div>
+                                  <h6
+                                    className={classNames(
+                                      projectcss.all,
+                                      projectcss.h6,
+                                      projectcss.__wab_text,
+                                      sty.h6__ajrzS
+                                    )}
+                                  >
+                                    <React.Fragment>
+                                      {(() => {
+                                        try {
+                                          return currentItem.signal.stopLoss;
+                                        } catch (e) {
+                                          if (
+                                            e instanceof TypeError ||
+                                            e?.plasmicType ===
+                                              "PlasmicUndefinedDataError"
+                                          ) {
+                                            return "Current Price";
+                                          }
+                                          throw e;
+                                        }
+                                      })()}
+                                    </React.Fragment>
+                                  </h6>
+                                </div>
+                                <div
+                                  className={classNames(
+                                    projectcss.all,
+                                    sty.freeBox__nUzNq
+                                  )}
+                                >
+                                  <div
+                                    className={classNames(
+                                      projectcss.all,
+                                      projectcss.__wab_text,
+                                      sty.text__rvDrH
+                                    )}
+                                  >
+                                    {"TP 1"}
+                                  </div>
+                                  <h6
+                                    className={classNames(
+                                      projectcss.all,
+                                      projectcss.h6,
+                                      projectcss.__wab_text,
+                                      sty.h6__rTlPr
+                                    )}
+                                  >
+                                    <React.Fragment>
+                                      {(() => {
+                                        try {
+                                          return currentItem.signal.TP1;
+                                        } catch (e) {
+                                          if (
+                                            e instanceof TypeError ||
+                                            e?.plasmicType ===
+                                              "PlasmicUndefinedDataError"
+                                          ) {
+                                            return "Current Price";
+                                          }
+                                          throw e;
+                                        }
+                                      })()}
+                                    </React.Fragment>
+                                  </h6>
+                                </div>
+                                <div
+                                  className={classNames(
+                                    projectcss.all,
+                                    sty.freeBox___5YpT4
+                                  )}
+                                >
+                                  <div
+                                    className={classNames(
+                                      projectcss.all,
+                                      projectcss.__wab_text,
+                                      sty.text___07WAr
+                                    )}
+                                  >
+                                    {"TP 2"}
+                                  </div>
+                                  <h6
+                                    className={classNames(
+                                      projectcss.all,
+                                      projectcss.h6,
+                                      projectcss.__wab_text,
+                                      sty.h6__vAjmR
+                                    )}
+                                  >
+                                    <React.Fragment>
+                                      {(() => {
+                                        try {
+                                          return currentItem.signal.TP2;
+                                        } catch (e) {
+                                          if (
+                                            e instanceof TypeError ||
+                                            e?.plasmicType ===
+                                              "PlasmicUndefinedDataError"
+                                          ) {
+                                            return "Current Price";
+                                          }
+                                          throw e;
+                                        }
+                                      })()}
+                                    </React.Fragment>
+                                  </h6>
+                                </div>
+                                <div
+                                  className={classNames(
+                                    projectcss.all,
+                                    sty.freeBox___7R7N
+                                  )}
+                                >
+                                  <div
+                                    className={classNames(
+                                      projectcss.all,
+                                      projectcss.__wab_text,
+                                      sty.text__zowIr
+                                    )}
+                                  >
+                                    {"TP 3"}
+                                  </div>
+                                  <h6
+                                    className={classNames(
+                                      projectcss.all,
+                                      projectcss.h6,
+                                      projectcss.__wab_text,
+                                      sty.h6___7GS4
+                                    )}
+                                  >
+                                    <React.Fragment>
+                                      {(() => {
+                                        try {
+                                          return currentItem.signal.TP3;
+                                        } catch (e) {
+                                          if (
+                                            e instanceof TypeError ||
+                                            e?.plasmicType ===
+                                              "PlasmicUndefinedDataError"
+                                          ) {
+                                            return "Current Price";
+                                          }
+                                          throw e;
+                                        }
+                                      })()}
+                                    </React.Fragment>
+                                  </h6>
+                                </div>
+                              </div>
+                              <Button
+                                className={classNames(
+                                  "__wab_instance",
+                                  sty.button___7AaNb
+                                )}
+                                color={"green"}
+                              >
+                                {"Execute Trade"}
+                              </Button>
+                            </React.Fragment>
+                          }
+                          signalOn={(() => {
+                            try {
+                              return currentItem.signal != null;
+                            } catch (e) {
+                              if (
+                                e instanceof TypeError ||
+                                e?.plasmicType === "PlasmicUndefinedDataError"
+                              ) {
+                                return [];
+                              }
+                              throw e;
+                            }
+                          })()}
+                          textContent2={
+                            <div
+                              className={classNames(
+                                projectcss.all,
+                                projectcss.__wab_text,
+                                sty.text__mjA3J
+                              )}
+                            >
+                              <React.Fragment>
+                                {(() => {
+                                  try {
+                                    return currentItem.caption;
+                                  } catch (e) {
+                                    if (
+                                      e instanceof TypeError ||
+                                      e?.plasmicType ===
+                                        "PlasmicUndefinedDataError"
+                                    ) {
+                                      return "Wellcome to algosaur, we are the first social trade in indonesia for crypto market trading";
+                                    }
+                                    throw e;
+                                  }
+                                })()}
+                              </React.Fragment>
+                            </div>
+                          }
+                        />
+                      </PlasmicLink__>
                     );
                   })}
                 </section>
@@ -1141,65 +1140,65 @@ const PlasmicDescendants = {
     "loadingBoundary",
     "content",
     "contentCard",
-    "avatar",
-    "name",
-    "coinTicker",
+    "avatar2",
+    "name2",
+    "coinTicker2",
     "h5",
-    "signal",
-    "chart",
-    "love",
-    "comment",
-    "send"
+    "signal2",
+    "chart2",
+    "love2",
+    "comment2",
+    "send2"
   ],
   header: ["header"],
   loadingBoundary: [
     "loadingBoundary",
     "content",
     "contentCard",
-    "avatar",
-    "name",
-    "coinTicker",
+    "avatar2",
+    "name2",
+    "coinTicker2",
     "h5",
-    "signal",
-    "chart",
-    "love",
-    "comment",
-    "send"
+    "signal2",
+    "chart2",
+    "love2",
+    "comment2",
+    "send2"
   ],
   content: [
     "content",
     "contentCard",
-    "avatar",
-    "name",
-    "coinTicker",
+    "avatar2",
+    "name2",
+    "coinTicker2",
     "h5",
-    "signal",
-    "chart",
-    "love",
-    "comment",
-    "send"
+    "signal2",
+    "chart2",
+    "love2",
+    "comment2",
+    "send2"
   ],
   contentCard: [
     "contentCard",
-    "avatar",
-    "name",
-    "coinTicker",
+    "avatar2",
+    "name2",
+    "coinTicker2",
     "h5",
-    "signal",
-    "chart",
-    "love",
-    "comment",
-    "send"
+    "signal2",
+    "chart2",
+    "love2",
+    "comment2",
+    "send2"
   ],
-  avatar: ["avatar"],
-  name: ["name"],
-  coinTicker: ["coinTicker", "h5"],
+  avatar2: ["avatar2"],
+  name2: ["name2"],
+  coinTicker2: ["coinTicker2", "h5"],
   h5: ["h5"],
-  signal: ["signal"],
-  chart: ["chart"],
-  love: ["love"],
-  comment: ["comment"],
-  send: ["send"]
+  signal2: ["signal2"],
+  chart2: ["chart2"],
+  love2: ["love2"],
+  comment2: ["comment2"],
+  send2: ["send2"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -1210,15 +1209,15 @@ type NodeDefaultElementType = {
   loadingBoundary: typeof LoadingBoundary;
   content: "section";
   contentCard: typeof ContentCard;
-  avatar: typeof PlasmicImg__;
-  name: "a";
-  coinTicker: "div";
+  avatar2: typeof PlasmicImg__;
+  name2: "a";
+  coinTicker2: "div";
   h5: "h5";
-  signal: "div";
-  chart: "div";
-  love: "div";
-  comment: "div";
-  send: "div";
+  signal2: "div";
+  chart2: "div";
+  love2: "div";
+  comment2: "div";
+  send2: "div";
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -1285,15 +1284,15 @@ export const PlasmicHomepage = Object.assign(
     loadingBoundary: makeNodeComponent("loadingBoundary"),
     content: makeNodeComponent("content"),
     contentCard: makeNodeComponent("contentCard"),
-    avatar: makeNodeComponent("avatar"),
-    _name: makeNodeComponent("name"),
-    coinTicker: makeNodeComponent("coinTicker"),
+    avatar2: makeNodeComponent("avatar2"),
+    name2: makeNodeComponent("name2"),
+    coinTicker2: makeNodeComponent("coinTicker2"),
     h5: makeNodeComponent("h5"),
-    signal: makeNodeComponent("signal"),
-    chart: makeNodeComponent("chart"),
-    love: makeNodeComponent("love"),
-    comment: makeNodeComponent("comment"),
-    send: makeNodeComponent("send"),
+    signal2: makeNodeComponent("signal2"),
+    chart2: makeNodeComponent("chart2"),
+    love2: makeNodeComponent("love2"),
+    comment2: makeNodeComponent("comment2"),
+    send2: makeNodeComponent("send2"),
 
     // Metadata about props expected for PlasmicHomepage
     internalVariantProps: PlasmicHomepage__VariantProps,
